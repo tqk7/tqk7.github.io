@@ -1,0 +1,70 @@
+//
+// List styles //
+//
+ul {
+	margin: 0;
+	li {
+		a {
+			@include transition(linear 0.1s);
+		}
+	}
+	&[class*=' list-'], &[class^='list-'] {
+		padding: 0;
+	}
+	&.list-unstyled {
+		li {
+			list-style-type: none;
+			margin-bottom: 6px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	//
+	// Horizontal List //
+	//
+	&[class*=' list-inline'], &[class^='list-inline'] {
+		li {
+			display: inline-block;
+		}
+	}
+	&.list-inline {
+		li {
+			padding-right: 4px;
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+	&.list-inline-lg {
+		li {
+			padding-right: 8px;
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+	&.list-inline-dot {
+		li {
+			position: relative;
+			padding: 0 4px 0 14px;
+			&:before {
+				content: '';
+				position: absolute;
+				top: 50%;
+				left: 0;
+				@include transform(translateY(-50%));
+				background: $white-08;
+				width: 5px;
+				height: 5px;
+				border-radius: 50%;
+			}
+			&:first-child {
+				padding-left: 0;
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,93 @@
+//
+// Typography //
+//
+body {
+	color: $white-08;
+	font-family: $font-family-primary;
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0;
+	@include breakpoint-less(md) {
+		font-size: 0.938rem;
+	}
+}
+
+h1,h2,h3,h4,h5,h6 {
+	letter-spacing: -0.3px;
+	color: white;
+	font-family: $font-family-secondary;
+	font-weight: $font-weight-medium;
+}
+
+p {
+	margin: 0;
+	line-height: 1.74;
+	@include breakpoint-less(md) {
+		line-height: 1.6;
+	}
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.font-small {
+	font-size: 0.9em;
+	line-height: 1.7;
+	@include breakpoint-less(md) {
+		font-size: 0.9em;
+		line-height: 1.7;
+	}
+}
+.font-large {
+	font-size: 1.063em;
+	line-height: 1.6;
+	@include breakpoint-less(md) {
+		font-size: 1.063em;
+	}
+}
+
+.title-heading {
+	color: white;
+	font-family: $font-family-secondary;
+	font-weight: 400;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	&:before {
+		content: '//';
+		padding-right: 6px;
+	}
+}
+
+.sm-heading {
+	color: white;
+	font-family: $font-family-secondary;
+	font-weight: 400;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+//
+// Font Icons //
+//
+i {
+	display: inline-block;
+}
+.icon-4xl {
+	i { font-size: 2.4em; }
+}
+.icon-3xl {
+	i { font-size: 2.13em; }
+}
+.icon-2xl {
+	i { font-size: 1.86em; }
+}
+.icon-xl {
+	i { font-size: 1.6em; }
+}
+.icon-lg {
+	i { font-size: 1.33em; }
+}
+.icon-sm {
+	i { font-size: 0.9em; }
+}

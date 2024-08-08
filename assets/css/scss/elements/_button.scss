@@ -1,0 +1,124 @@
+//
+// Buttons //
+//
+button {
+	background: transparent;
+	box-shadow: none;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
+}
+a, button {
+	&:focus, &:active {
+		box-shadow: none;
+		outline: 0;
+	}
+}
+
+.button {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	background: $white-015;
+	backdrop-filter: blur(5px);
+	padding: 13px 30px;
+	border-radius: 40px;
+	color: white;
+	&:after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0.15;
+		background-image: $gradient;
+		width: 100%;
+		height: 100%;
+		@include transition(linear 0.1s);
+	}
+	&:hover {
+		background: $white-015;
+		&:after {
+			opacity: 0.2;
+		}
+	}
+}
+.button-sm {
+	padding: 10px 24px;
+}
+.button-lg {
+	padding: 16px 36px;
+}
+.button-font-2 {
+	font-family: $font-family-secondary;
+	font-weight: 400;
+	font-size: 0.9em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.button-style-2 {
+	background: $black-01;
+	&:after {
+		display: none;
+	}
+	&:hover {
+		background: $black-015;
+	}
+}
+
+.button-circle {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	background: $white-015;
+	backdrop-filter: blur(5px);
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+	@include transition(linear 0.06s);
+	&:after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0.15;
+		background-image: $gradient;
+		width: 100%;
+		height: 100%;
+		@include transition(linear 0.06s);
+	}
+	&:hover {
+		background: $white-02;
+		&:after {
+			opacity: 0.2;
+		}
+	}
+}
+.button-circle-sm {
+	width: 44px;
+	height: 44px;
+	line-height: 44px;
+}
+.button-circle-lg {
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+}
+.button-circle-xl {
+	width: 62px;
+	height: 62px;
+	line-height: 62px;
+}
+.button-circle-style-2 {
+	background: $black-01;
+	&:after {
+		display: none;
+	}
+	&:hover {
+		background: $black-015;
+	}
+}

@@ -1,0 +1,40 @@
+//
+// Clients //
+//
+.client-box {
+	a {
+		img {
+			opacity: 0.6;
+			width: 100%;
+			@include transition(ease-out 0.12s);
+		}
+		&:hover {
+			img {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+//
+// Avatars Group //
+//
+.avatar-group {
+	display: block;
+	padding: 0;
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin-left: -12px;
+		padding: 0;
+		&:first-child {
+			margin-left: 0;
+		}
+		img {
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			@include box-shadow(0 3px 16px 0 rgba(0,0,0,0.13));
+		}
+	}
+}

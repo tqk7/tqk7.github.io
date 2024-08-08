@@ -1,0 +1,132 @@
+//
+// Base styles //
+//
+html, body {
+	width: 100%;
+	height: 100%;
+}
+body {
+	overflow-x: hidden;
+	position: relative;
+	z-index: 1;
+	background: black;
+	width: auto;
+	min-height: 100%;
+	color: $white-07;
+}
+h1,h2,h3,h4,h5,h6 {
+	color: white;
+	a {
+		color: white;
+		&:hover, &:focus { color: white; }
+	}
+}
+a {
+	text-decoration: none;
+	@include transition(linear 0.1s);
+	&:not([class*='button']) {
+		color: white;
+		&:hover, &:focus { 
+			color: white; 
+			text-decoration: none; 
+		}
+	}
+}
+
+:root {
+	--bs-dark-rgb: 24, 26, 28;
+}
+
+.container, .container-fluid {
+	padding: 0 20px;
+}
+@include breakpoint-less(md) {
+	.container, .container-fluid {
+		padding: 0 24px;
+	}
+}
+
+
+//
+// Sections //
+//
+.section-sm {
+	overflow: hidden;
+	padding: 70px 0;
+	@include breakpoint-less(lg) {
+		padding: 50px 0;
+	}
+	@include breakpoint-less(md) {
+		padding: 30px 0;
+	}
+}
+.section {
+	overflow: hidden;
+	padding: 90px 0;
+	@include breakpoint-less(lg) {
+		padding: 70px 0;
+	}
+	@include breakpoint-less(md) {
+		padding: 50px 0;
+	}
+}
+.section-lg {
+	overflow: hidden;
+	padding: 110px 0;
+	@include breakpoint-less(lg) {
+		padding: 90px 0;
+	}
+	@include breakpoint-less(md) {
+		padding: 70px 0;
+	}
+}
+.section-xl {
+	overflow: hidden;
+	padding: 150px 0;
+	@include breakpoint-less(lg) {
+		padding: 130px 0;
+	}
+	@include breakpoint-less(md) {
+		padding: 110px 0;
+	}
+	@include breakpoint-less(sm) {
+		padding: 90px 0;
+	}
+}
+
+
+//
+// Section box //
+//
+.section-box {
+	padding: 0 24px;
+	@include breakpoint-less(md) {
+		padding: 0 24px;
+		.container, .container-fluid {
+			padding: 0 24px;
+		}
+	}
+	@include breakpoint-above(lg) {
+		padding: 0 30px;
+	}
+	@include breakpoint-above(xl) {
+		padding: 0 40px;
+	}
+	@include breakpoint-above(2xl) {
+		padding: 0 50px;
+	}
+	@include breakpoint-above(3xl) {
+		padding: 0 60px;
+	}
+}
+
+//
+// Background Image //
+//
+.bg-image {
+	position: relative;
+	background-position: center center;
+    background-attachment: scroll;
+    @include background-size(cover);
+    background-repeat: no-repeat;
+}

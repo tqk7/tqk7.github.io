@@ -1,0 +1,151 @@
+//
+// Fancy Box //
+//
+.fancy-box {
+	z-index: 1;
+	position: relative;
+	background: $dark;
+	overflow: hidden;
+	border-radius: 1em;
+	padding: 36px;
+	&:before {
+		z-index: -1;
+		content: '';
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: $gradient;
+		width: 100%;
+		height: 100%;
+		@include transition(linear 0.1s);
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		opacity: 0.6;
+		background-image: $gradient;
+		width: auto;
+		height: 1px;
+		@include transition(linear 0.1s);
+	}
+	&:hover {
+		&:before {
+			visibility: visible;
+			opacity: 0.05;
+		}
+		&:after {
+			opacity: 1;
+		}
+	}
+	@include breakpoint-less(md) {
+		padding: 30px;
+	}
+	@include breakpoint-less(sm) {
+		padding: 24px;
+	}
+}
+
+
+//
+// Ordered box //
+//
+.order-box {
+	z-index: 1;
+	position: relative;
+	background: $dark;
+	overflow: hidden;
+	border-radius: 1em;
+	padding: 36px;
+	i {
+		color: white;
+	}
+	&:before {
+		z-index: -1;
+		content: '';
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-image: $gradient;
+		width: 100%;
+		height: 100%;
+		@include transition(linear 0.1s);
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		opacity: 0.6;
+		background-image: $gradient;
+		width: auto;
+		height: 1px;
+		@include transition(linear 0.1s);
+	}
+	&:hover {
+		&:before {
+			visibility: visible;
+			opacity: 0.05;
+		}
+		&:after {
+			opacity: 1;
+		}
+	}
+	@include breakpoint-less(md) {
+		padding: 30px;
+	}
+	@include breakpoint-less(sm) {
+		padding: 24px;
+	}
+	@include breakpoint-above(md) {
+		@include display-flex;
+		.order {
+			width: 86px;
+			min-width: 86px;
+		}
+	}
+	@include breakpoint-above(lg) {
+		.order {
+			width: 92px;
+			min-width: 92px;
+		}
+	}
+}
+
+
+//
+// Icon box //
+//
+.icon-box {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 50px;
+	&:after {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		opacity: 0.2;
+		background-image: $gradient;
+		border-radius: 50%;
+	}
+}
+.icon-box-lg {
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+}

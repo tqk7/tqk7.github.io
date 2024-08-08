@@ -1,0 +1,127 @@
+//
+// Backgroud Moving Lines //
+//
+.bg-lines {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	.bg-line-1, 
+	.bg-line-2, 
+	.bg-line-3, 
+	.bg-line-4, 
+	.bg-line-5 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		border-right: 1px solid $white-015;
+		&:before {
+			content: '';
+			position: absolute;
+			top: -80px;
+			right: -1px;
+			background: linear-gradient(transparent, $white-06);
+			width: 1px;
+			height: 80px;
+		}
+	}
+	.bg-line-1 {
+		width: 10%;
+		&:before {
+			@include animation(bgLine 8s linear infinite);
+		}
+	}
+	.bg-line-2 {
+		width: 30%;
+		&:before {
+			@include animation(bgLine 9s linear infinite);
+			@include animation-delay(3s);
+		}
+	}
+	.bg-line-3 {
+		width: 50%;
+		&:before {
+			@include animation(bgLine 7s linear infinite);
+			@include animation-delay(4s);
+		}
+	}
+	.bg-line-4 {
+		width: 70%;
+		&:before {
+			@include animation(bgLine 10s linear infinite);
+			@include animation-delay(2s);
+		}
+	}
+	.bg-line-5 {
+		width: 90%;
+		&:before {
+			@include animation(bgLine 8.5s linear infinite);
+			@include animation-delay(2s);
+		}
+	}
+	@include breakpoint-less(md) {
+		.bg-line-1 {
+			width: 25%;
+		}
+		.bg-line-2 {
+			width: 50%;
+		}
+		.bg-line-3 {
+			width: 75%;
+		}
+		.bg-line-4, 
+		.bg-line-5 {
+			display: none;
+		}
+	}
+}
+@-webkit-keyframes bgLine {
+	0% {
+		top: -80px;
+	}
+	100% {
+		top: 100%;
+	}
+}
+@keyframes bgLine {
+	0% {
+		top: -80px;
+	}
+	100% {
+		top: 100%;
+	}
+}
+
+//
+// Scroll To Top //
+//
+.scrolltotop {
+	position: fixed;
+	right: 24px;
+	bottom: 24px;
+	@include transform(translateY(20px));
+	z-index: 991;
+	visibility: hidden;
+	opacity: 0;
+	@include transition(ease-out 0.12s);
+	&.show {
+		@include transform(translateY(0));
+		visibility: visible;
+		opacity: 1;
+	}
+	@include breakpoint-above(lg) {
+		right: 30px;
+	}
+	@include breakpoint-above(xl) {
+		right: 40px;
+	}
+	@include breakpoint-above(2xl) {
+		right: 50px;
+	}
+	@include breakpoint-above(3xl) {
+		right: 60px;
+	}
+}

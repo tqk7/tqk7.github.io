@@ -1,0 +1,32 @@
+//
+// Animated Progress bar Styles //
+//
+.progress-box {
+	* {
+		margin: 0;
+	}
+	.animated-progress {
+		position: relative;
+		background: $white-02;
+		height: 3px;
+		margin-top: 4px;
+		border-radius: 3px;
+		div {
+			position: absolute;
+			display: block;
+		    background-image: $gradient;
+			width: 50%;
+			height: 100%;
+			border-radius: 3px;
+			color: white;
+			@include transition(width 0.7s cubic-bezier(0.165, 0.84, 0.44, 1));
+			@include transition-delay(0.1s);
+			&::after {
+				content: attr(data-progress) '%';
+				position: absolute;
+				top: -26px;
+				right: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+//
+// Forms //
+//
+input:not(.form-check-input), 
+textarea {
+	background: $dark;
+	width: 100%;
+	border: 0;
+	margin-bottom: 1rem;
+	padding: 15px 20px;
+	border-radius: 0.5em;
+	box-shadow: none;
+	font: 400 15px $font-family-primary;
+	@include transition(ease-out 0.16s);
+	&:focus, &:active {
+		outline: 0;
+		box-shadow: none;
+	}
+}
+textarea {
+	height: 160px;
+}
+input:not(.form-check-input), textarea, .form-control {
+	color: $white-08;
+	&::-webkit-input-placeholder { color: $white-04; }
+	&::-moz-placeholder { color: $white-04; }
+	&:-ms-placeholder { color: $white-04; }
+	&::-ms-placeholder { color: $white-04; }
+	&::placeholder { color: $white-04; }
+}
+label {
+	font-size: 15px;
+}
+
+
+//
+// Contact Form Styles //
+//
+.submit-result {
+	span {
+		display: none;
+		@include transition(ease-out 0.2s);
+		&.show-result {
+			margin-top: 24px;
+			display: block;
+		}
+		&#success { color: $green; }
+		&#error { color: $red; }
+		.error-color { background: rgba(255, 0, 0, 0.1); }
+	}
+}

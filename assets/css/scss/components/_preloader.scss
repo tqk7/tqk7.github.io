@@ -1,0 +1,62 @@
+//
+// Page Preloader //
+//
+body {
+	&:after {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 998;
+		background: black;
+		width: 100%;
+		height: 100%;
+	}
+	&.loaded {
+		&:after {
+			display: none;
+		}
+	}
+}
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999;
+	visibility: visible;
+	opacity: 1;
+	background: black;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	div {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		@include transform(translate(-50%,-50%));
+		width: 50px;
+        height: 50px;
+        span {
+			display: inline-block;
+			width: 50px;
+			height: 50px;
+			border: 1px solid;
+			border-radius: 50%;
+			border-color: white $white-03 white $white-03;
+			@include animation(loader-spin 600ms infinite linear);
+		}
+	}
+}
+.loaded {
+	.preloader {
+		visibility: hidden;
+		opacity: 0;
+		@include transition(ease-out 0.4s);
+	}
+}
+@keyframes loader-spin {
+	100%{ transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-webkit-keyframes loader-spin {
+	100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
